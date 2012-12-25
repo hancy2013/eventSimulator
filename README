@@ -1,1 +1,3 @@
-This file was created by IntelliJ IDEA 12.0 for binding GitHub repository
+Event simulator
+read transactions from mysql database
+and inqueue it into Activemq
