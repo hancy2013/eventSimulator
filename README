@@ -1,3 +1,4 @@
 Event simulator
 read transactions from mysql database
 and inqueue it into Activemq
+заввисит от DataModel - интерфейс и класс определяющий событие - транзакцию
