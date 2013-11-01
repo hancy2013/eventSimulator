@@ -1,14 +1,13 @@
 package home.vitaly.simulator;
 
+import home.vitaly.datamodel.Transaction;
+
+import javax.jms.JMSException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
-import home.vitaly.datamodel.Transaction;
-import home.vitaly.datamodel.TransactionImpl;
-
-import javax.jms.JMSException;
 
 public class RunSimulator {
 
@@ -44,8 +43,9 @@ public void letsGoRealTime() throws JMSException {
 		System.out.print("\r"+timeStamp+" ");
 		for(Transaction tr : trlst ) {
 			mq.enqueueTransaction(tr);
-			System.out.print("*");
-		}
+//			System.out.print("*");
+            System.out.println("TR:"+tr);
+        }
 //		try 
 //	    {
 //	        Thread.sleep(1);
@@ -63,9 +63,9 @@ private String getTimeStamp(Long seconds) {
 	Date date = new Date(seconds * 1000);
 	SimpleDateFormat sdf = new SimpleDateFormat("HHmmss", Locale.ENGLISH);
 	sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-	String formattedDate = sdf.format(date);
+//	String formattedDate = sdf.format(date);
 //	System.out.println(formattedDate); 
-	return formattedDate;	
+	return sdf.format(date);
 	}
-
 }
+

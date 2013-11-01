@@ -1,18 +1,10 @@
 package home.vitaly.simulator;
 
-import javax.jms.Connection;
-import javax.jms.DeliveryMode;
-import javax.jms.Destination;
-import javax.jms.JMSException;
-import javax.jms.MessageProducer;
-import javax.jms.ObjectMessage;
-import javax.jms.Session;
 import home.vitaly.datamodel.Transaction;
-import home.vitaly.datamodel.TransactionImpl;
-
-
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
+
+import javax.jms.*;
 
 public class EnqueueMessage
 {
@@ -33,7 +25,7 @@ public class EnqueueMessage
     public void open() throws JMSException
     {
           
-            Destination destination = null;
+            Destination destination;
             ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(user, password, url);
      		connection = connectionFactory.createConnection();
             connection.start();
