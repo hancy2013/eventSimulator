@@ -1,11 +1,18 @@
+/**************************************************************************************
+ * Copyright (C) 2014 Vitaly&Pavel team. All rights reserved.                         *
+ *                                                                                    *
+ * ---------------------------------------------------------------------------------- *
+ * The software in this package is published under the terms of the GPL license       *
+ * a copy of which has been included with this distribution in the license.txt file.  *
+ **************************************************************************************/
 package home.vitaly.simulator;
 
-import java.util.List;
-
+import home.vitaly.datamodel.Transaction;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.cfg.Configuration;
-import home.vitaly.datamodel.*;
+
+import java.util.List;
 
 public class DbQuery {
 
